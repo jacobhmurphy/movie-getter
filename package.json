@@ -4,11 +4,15 @@
   "description": "gets movies and info from imdb",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "nodemon": "^1.19.4",
     "request": "^2.88.0",
