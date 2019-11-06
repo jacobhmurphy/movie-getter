@@ -1,0 +1,23 @@
+body {
+    background-color: #9cc0e7;
+    width: 600px;
+    margin: 0 auto;
+}
+
+/* .container {
+    margin: 0 auto;
+} */
+
+.header {
+    font-family: 'Raleway', sans-serif;
+}
+
+.plot {
+    font-family: 'Roboto', sans-serif;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: green;
+    font-family: 'Roboto', sans-serif;
+}
