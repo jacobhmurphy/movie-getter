@@ -34,7 +34,7 @@ app.post('/', function(req, response) {
     req2.end(function (res) {
         if (res.error) throw new Error(res.error);
         else {
-            response.render('home.ejs', { movieTitle: res.body.Title, moviePoster: res.body.Poster, moviePlot: res.body.Plot, error: null }) // make error: res.error?
+            response.render('home.ejs', { movieTitle: res.body.Title, moviePoster: res.body.Poster, moviePlot: res.body.Plot, error: res.error }) // make error: res.error?
     }
     });
 })
