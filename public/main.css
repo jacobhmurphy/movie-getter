@@ -17,7 +17,11 @@ body {
 }
 
 .button {
-    border-radius: 4px;
+    border-radius: 20px;
     background-color: green;
     font-family: 'Roboto', sans-serif;
+}
+
+.usertext{
+    height: 19 px;
 }

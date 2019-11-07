@@ -3,10 +3,14 @@ const express = require('express')
 const unirest = require('unirest')
 const bodyParser = require('body-parser')
 const request = require('request')
+
+
 const app = express()
+
 const apiKey = process.env.IMDB_API_KEY
 
 app.set('view engine', 'ejs')
+
 app.use(express.static('./public'))
 app.use(bodyParser.urlencoded({extended: false}))
 
