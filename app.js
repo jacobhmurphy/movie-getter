@@ -15,28 +15,24 @@ app.get('/', function (req, response) {
   })
 
 app.post('/', function(req, response) {
+  var results = {}
+  
+  function callback() {
+    let localTitle = results.Title
+    let localPoster = results.Poster
+    let localPlot = results.Plot
+    // maybe call a function that uses the imgur api here?
+    response.render('home.ejs', { movieTitle: localTitle, moviePoster: localPoster, moviePlot: localPlot, error: null })
+  }
 
-    var req2 = unirest("GET", "https://movie-database-imdb-alternative.p.rapidapi.com/");
-
-    req2.query({
-	    "page": "1",
-	    "r": "json",
-	    "type": "movie",
-	    "t": req.body.movieName
-    });
-
-    req2.headers({
-	    "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-	    "x-rapidapi-key": apiKey
-    });
-
-    
-    req2.end(function (res) {
+  unirest.get("https://movie-database-imdb-alternative.p.rapidapi.com/")
+    .query({ "page": "1", "r": "JSON", "t": req.body.movieName })
+    .headers({ "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com", "x-rapidapi-key": apiKey })
+    .end(function (res) {
         if (res.error) throw new Error(res.error);
-        else {
-            response.render('home.ejs', { movieTitle: res.body.Title, moviePoster: res.body.Poster, moviePlot: res.body.Plot, error: null }) // make error: res.error?
-    }
-    });
+        results = res.body
+        callback()
+    })
 })
 
 app.listen(3000, function() {
