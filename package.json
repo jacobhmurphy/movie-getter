@@ -2,6 +2,10 @@
   "name": "movie-getter",
   "version": "1.0.0",
   "description": "gets movies and info from imdb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobhmurphy/movie-getter"
+  },
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
