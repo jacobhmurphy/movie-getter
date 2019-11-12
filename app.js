@@ -11,7 +11,7 @@ app.use(express.static('./public'))
 app.use(bodyParser.urlencoded({extended: false}))
 
 app.get('/', function (req, response) {
-    response.render('home.ejs', { movieTitle: null, moviePoster: null, moviePlot: null, error: null })
+    response.render('home.ejs', { movieTitle: null, moviePoster: null, moviePlot: null, movieActors: null, error: null })
   })
 
 app.post('/', function(req, response) {
@@ -21,8 +21,8 @@ app.post('/', function(req, response) {
     let localTitle = results.Title
     let localPoster = results.Poster
     let localPlot = results.Plot
-    // maybe call a function that uses the imgur api here?
-    response.render('home.ejs', { movieTitle: localTitle, moviePoster: localPoster, moviePlot: localPlot, error: null })
+    let localActors = results.Actors
+    response.render('home.ejs', { movieTitle: localTitle, moviePoster: localPoster, moviePlot: localPlot, movieActors: localActors, error: null })
   }
 
   unirest.get("https://movie-database-imdb-alternative.p.rapidapi.com/")
