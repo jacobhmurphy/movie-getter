@@ -14,7 +14,7 @@
     <div class="container">
         <h1 class="header">Enter a movie you want to search for:</h2>
             <form action="/" method="post">
-                <input class="usertext" type="text" name="movieName" placeholder="GoodFellas">
+                <input class="usertext" type="text" name="movieName" placeholder="Enter movie title here...">
                 <input class="button" type="submit" value="Get Movie Info">
             </form>
             <% if (error) { %>
@@ -23,7 +23,7 @@
             <h2 class="header"><%= movieTitle %> </h4>
                 <img class="movie-poster" src="<%= moviePoster %>" alt="">
                 <p class="plot"> <%= moviePlot %> </p>
-                <p class="actors"><b>ACTORS:</b> <%= movieActors %> </p>
+                <p class="actors"> <%= movieActors %> </p>
                 <% } %>
     </div>
 </body>

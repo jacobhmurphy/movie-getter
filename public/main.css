@@ -1,7 +1,7 @@
 body {
-    background-color: #9cc0e7;
-    width: 600px;
-    margin: 0 auto;
+  background-color: #9cc0e7;
+  width: 600px;
+  margin: 0 auto;
 }
 
 /* .container {
@@ -9,19 +9,23 @@ body {
 } */
 
 .header {
-    font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .plot {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .actors {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .button {
-    border-radius: 4px;
-    background-color: green;
-    font-family: 'Roboto', sans-serif;
+  border-radius: 20px;
+  background-color: green;
+  font-family: "Roboto", sans-serif;
+}
+
+.usertext {
+  height: 19px;
 }
